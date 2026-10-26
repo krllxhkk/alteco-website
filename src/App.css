@@ -1,0 +1,997 @@
+/* ========================================
+   ALGEMENE INSTELLINGEN
+======================================== */
+
+/* Pas box-sizing toe op alle elementen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #111111;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Herbruikbare container voor alle secties */
+.container {
+    width: min(1200px, 90%);
+    margin-inline: auto;
+}
+
+/* Koppen gebruiken het lettertype Oswald */
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Oswald", "Open Sans", sans-serif;
+    line-height: 1.2;
+}
+
+/* ========================================
+   TOP BAR
+======================================== */
+
+.top-bar {
+    background-color: #303030;
+    color: #ffffff;
+    font-size: 11px;
+    padding: 10px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-info,
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-info span,
+.social-links span {
+    white-space: nowrap;
+}
+
+.social-links button {
+    border: 0;
+    border-radius: 22px;
+    padding: 8px 18px;
+    background-color: #005bea;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    transition: background-color 0.25s ease;
+}
+
+.social-links button:hover {
+    background-color: #1847b8;
+}
+
+/* ========================================
+   NAVIGATIE
+======================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.navbar-content {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+/* Bedrijfslogo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    color: #005bea;
+    font-size: 32px;
+    line-height: 1;
+}
+
+.logo strong {
+    display: block;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.logo small {
+    display: block;
+    color: #555555;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* Navigatielinks op desktop */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(12px, 2vw, 28px);
+}
+
+.nav-links a {
+    color: #222222;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #005bea;
+}
+
+.search-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    min-height: 38px;
+    cursor: pointer;
+}
+
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: #005bea;
+    font-size: 27px;
+    line-height: 1;
+}
+
+/* ========================================
+   HERO / SLIDER
+======================================== */
+
+/* De hero-banner onder de navigatie */
+/* De hero-banner onder de navigatie */
+.hero {
+    position: relative;
+    min-height: 390px;
+    background-color: #333333;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* De inhoud verticaal uitlijnen */
+.hero-container {
+    position: relative;
+    z-index: 1;
+    width: min(1200px, 90%);
+    min-height: 390px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content h1 {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 0 20px;
+    color: #ffffff;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.hero-content h1 span {
+    display: inline;
+    padding: 4px 9px;
+    background-color: #005bea;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.hero-content p {
+    display: table;
+    max-width: 100%;
+    margin: 0 0 25px;
+    padding: 9px 14px;
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-buttons button {
+    min-width: 105px;
+    padding: 12px 24px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-buttons button:hover {
+    border-color: #005bea;
+    background-color: #005bea;
+}
+
+/* Navigatiepijlen van de slider */
+.slider-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 48px;
+    transform: translateY(-50%);
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+.slider-arrow:hover {
+    background-color: #005bea;
+}
+
+.slider-left {
+    left: 0;
+}
+
+.slider-right {
+    right: 0;
+}
+
+.slider-dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.7;
+}
+
+.slider-dots span.active {
+    background-color: #005bea;
+    opacity: 1;
+}
+
+/* ========================================
+   HERBRUIKBAAR GRID SYSTEEM
+======================================== */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -15px;
+}
+
+.col {
+    min-width: 0;
+    padding-inline: 15px;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+/* ========================================
+   OFFERS
+======================================== */
+
+.offers {
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 30px;
+}
+
+.offers-image-wrapper {
+    min-width: 0;
+    min-height: 430px;
+}
+
+.offers-image {
+    width: 100%;
+    height: 100%;
+    min-height: 430px;
+    object-fit: cover;
+}
+
+.offers-content {
+    align-self: center;
+    padding: 38px 0;
+}
+
+.section-subtitle {
+    display: block;
+    margin-bottom: 10px;
+    color: #005bea;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.offers-content h2 {
+    margin-bottom: 16px;
+    color: #303030;
+    
+
+
+    
+  
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.offer-item {
+    min-width: 0;
+}
+
+.offer-item h3 {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 17px;
+}
+
+.offer-item p {
+    margin-bottom: 12px;
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.offer-item a {
+    color: #666666;
+    font-size: 10px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.offer-item a:hover {
+    color: #005bea;
+}
+
+.dark-button {
+    display: inline-block;
+    padding: 13px 18px;
+    border: 0;
+    background-color: #303030;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.25s ease;
+}
+
+.dark-button:hover {
+    background-color: #005bea;
+}
+
+/* ========================================
+   SERVICES
+======================================== */
+
+.services {
+    padding: 75px 0 85px;
+    background-color: #ffffff;
+}
+
+.services-heading {
+    max-width: 700px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.services-heading .section-subtitle {
+    margin-bottom: 8px;
+}
+
+.services-heading h2 {
+    margin-bottom: 18px;
+    color: #303030;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.services-heading p {
+    color: #444444;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.services-grid {
+    display: grid;
+    
+
+
+    
+  
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    background-color: #005bea;
+    color: #ffffff;
+    font-size: 25px;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: translateY(-4px);
+    background-color: #1847b8;
+}
+
+.service-card .section-subtitle {
+    margin-bottom: 8px;
+}
+
+.service-card h3 {
+    margin-bottom: 14px;
+    color: #333333;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    padding: 35px 0;
+    background-color: #303030;
+    color: #ffffff;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #9dbdff;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+@media (max-width: 1024px) {
+    .container {
+        width: 92%;
+    }
+
+    .navbar-content {
+        min-height: 72px;
+        gap: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero,
+    .hero-container {
+        min-height: 420px;
+    }
+
+    .offers-grid {
+        gap: 22px;
+    }
+
+    .offers-image-wrapper,
+    .offers-image {
+        min-height: 400px;
+    }
+
+    .offers-content {
+        padding: 28px 0;
+    }
+
+    .offer-items {
+        gap: 16px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 38px;
+    }
+}
+/* ========================================
+   MOBIEL
+======================================== */
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    /* Vereenvoudigde contactbalk op mobiel */
+    .top-bar {
+        padding: 9px 0;
+        font-size: 10px;
+    }
+
+    .top-bar-content {
+        justify-content: center;
+    }
+
+    .contact-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    /* Compacte navigatie op mobiel */
+    .navbar-content {
+        min-height: 62px;
+    }
+
+    .logo-icon {
+        font-size: 27px;
+    }
+
+    .logo strong {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    /* Hero-inhoud centreren op mobiel */
+    .hero,
+    .hero-container {
+        min-height: 450px;
+    }
+
+    .hero {
+        background-position: center;
+    }
+
+    .hero-container {
+        justify-content: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(25px, 7vw, 32px);
+        line-height: 1.45;
+    }
+
+    .hero-content h1 span {
+        display: inline;
+    }
+
+    .hero-content p {
+        display: inline-block;
+        font-size: 12px;
+    }
+    
+
+
+    
+  
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-buttons button {
+        min-width: 95px;
+        padding: 10px 16px;
+    }
+
+    .slider-arrow {
+        width: 32px;
+        height: 40px;
+        font-size: 24px;
+    }
+
+    /* Offers onder elkaar op mobiel */
+    .offers-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .offers-image-wrapper,
+    .offers-image {
+        min-height: 270px;
+        height: 270px;
+    }
+
+    .offers-content {
+        padding: 30px 0 38px;
+    }
+
+    .offers-content h2 {
+        font-size: 28px;
+    }
+
+    .offers-intro {
+        margin-bottom: 24px;
+    }
+
+    .offer-items {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    /* Services worden twee kolommen op mobiel */
+    .services {
+        padding: 55px 0 60px;
+    }
+
+    .services-heading {
+        margin-bottom: 32px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 18px;
+    }
+
+    .service-icon {
+        width: 58px;
+        height: 58px;
+        margin-bottom: 16px;
+        font-size: 22px;
+    }
+
+    .service-card h3 {
+        font-size: 13px;
+    }
+
+    .service-card p {
+        font-size: 11px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Kleine mobiele schermen */
+@media (max-width: 420px) {
+    .contact-info {
+        gap: 6px;
+        font-size: 9px;
+    }
+
+    .hero,
+    .hero-container {
+        min-height: 420px;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .hero-content p {
+        max-width: 100%;
+        padding: 8px 10px;
+    }
+        .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   SERVICES - Dienstenoverzicht
+======================================== */
+
+.services {
+    width: 100%;
+    padding: 75px 0 85px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+/* De inhoud krijgt een vaste maximale breedte */
+.services .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* De titel en introductie staan in het midden */
+.services-heading {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.services-heading .section-subtitle {
+    display: block;
+    margin-bottom: 8px;
+    color: #005bea;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.services-heading h2 {
+    margin: 0 0 18px;
+    color: #303030;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.services-divider {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 24px;
+}
+
+.services-divider span {
+    width: 7px;
+    height: 7px;
+    background-color: #bdbdbd;
+}
+
+.services-heading p {
+    margin: 0;
+    color: #444444;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* Vier kaarten naast elkaar op grote schermen */
+.services .services-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 40px;
+    align-items: start;
+}
+
+/* Elke kaart behoudt zijn eigen ruimte */
+.services .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Blauwe ronde pictogrammen */
+.services .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 86px;
+    height: 86px;
+    flex: 0 0 86px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background-color: #005bea;
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: transform 0.25s ease;
+}
+
+.services .service-card:hover .service-icon {
+    transform: translateY(-4px);
+}
+
+/* Klein blauw bijschrift boven de titel */
+.services .service-label {
+    display: block;
+    margin-bottom: 14px;
+    color: #005bea;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Titel van de dienst */
+.services .service-card h3 {
+    margin: 0 0 16px;
+    color: #303030;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Beschrijving van de dienst */
+.services .service-card p {
+    width: 100%;
+    margin: 0;
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+/* Twee kolommen op tablets */
+@media (max-width: 1024px) {
+    .services .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px 28px;
+    }
+}
+
+/* Twee kolommen op mobiele schermen */
+@media (max-width: 768px) {
+    .services {
+        padding: 55px 0 60px;
+    }
+
+    .services-heading {
+        margin-bottom: 40px;
+    }
+
+    .services .services-grid {
+        gap: 35px 20px;
+    }
+
+    .services .service-icon {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+        margin-bottom: 20px;
+    }
+
+    .services .service-card h3 {
+        font-size: 15px;
+    }
+
+    .services .service-card p {
+        font-size: 13px;
+    }
+}
+
+/* Een kolom op zeer kleine telefoons */
+@media (max-width: 420px) {
+    .services .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Verwijder de blauwe verbindingsbalk tussen de iconen */
+.services .services-grid {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.services .services-grid::before,
+.services .services-grid::after {
+    content: none !important;
+    display: none !important;
+}
+
+.services .service-card {
+    position: relative;
+    background: transparent !important;
+}
+
+.services .service-card::before,
+.services .service-card::after {
+    content: none !important;
+    display: none !important;
+}
+
+.services .service-icon {
+    position: relative;
+    z-index: 1;
+    border-radius: 50% !important;
+    background: #005bea !important;
+}
+
+/* Navigatie blijft bovenaan zichtbaar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Voorkom dat de navigatie achter andere elementen verdwijnt */
+header,
+.navbar {
+    box-sizing: border-box;
+}
