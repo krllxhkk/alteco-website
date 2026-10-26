@@ -995,3 +995,77 @@ header,
 .navbar {
     box-sizing: border-box;
 }
+.footer {
+    position: relative;
+    min-height: 42px;
+    background: #fff;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #0560df;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #0002;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background: #004bb5;
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+}
+/* Header blijft bovenaan staan */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+}
+
+/* Bovenste donkere balk */
+.header-top {
+    background: #333;
+    color: #fff;
+}
+
+/* Navigatiebalk */
+.navbar {
+    background: #fff;
+}
+/* Header blijft altijd bovenaan zichtbaar */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+}
+
+/* Voorkomt dat de inhoud achter de header verdwijnt */
+body {
+    padding-top: 157px;
+}
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #fff;
+}

@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 function Header() {
     return (
-        <header>
+        <header className="site-header">
 
             {/* Bovenste donkere balk met contactgegevens */}
             <div className="top-bar">
